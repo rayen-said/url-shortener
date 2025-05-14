@@ -4,7 +4,7 @@
 
 "use client"; // This directive is crucial for components with interactivity & hooks
 
-import { useState, useTransition } from 'react';
+import { useState } from 'react';
 import { shortenUrlAction } from '../actions/urlshortener';
 
 function UrlShortenerForm() {

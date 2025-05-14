@@ -64,11 +64,10 @@ export async function shortenUrlAction(longUrl: string): Promise<ActionResult> {
 
     return { shortUrl: data.short_url };
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Network or unexpected error in server action:", error);
-    if (error.cause && error.cause.code === 'ECONNREFUSED') {
-        return { error: "Could not connect to the backend service. Is it running?" };
-    }
+    
+      
     return { error: "An unexpected error occurred on the server. Please try again." };
   }
 }
