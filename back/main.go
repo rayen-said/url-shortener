@@ -146,8 +146,8 @@ func main() {
 	// This should include your Vercel production domain, preview domains, and localhost for dev.
 	// Reading this from an environment variable in Railway is a good practice for production.
 	allowedOrigins := []string{
-		"http://localhost:3000",                        // For local Next.js development
-		"https://url-shortener-seven-theta.vercel.app", // Your Vercel production domain
+		"http://localhost:3000",                                  // For local Next.js development
+		"https://url-shortener-rayen-saids-projects.vercel.app/", // Your Vercel production domain
 		// Add other Vercel preview domains if needed, or use a wildcard cautiously in dev/staging
 		// e.g., "https://*-url-shortener-seven-theta.vercel.app" // Wildcard for preview deployments (use with caution)
 	}
