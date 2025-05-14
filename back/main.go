@@ -84,7 +84,7 @@ func handleShorten(w http.ResponseWriter, r *http.Request) {
 
 	// Construct the short URL (assuming service runs on localhost:8080)
 	// You might want to make the base URL configurable
-	shortenedURL := fmt.Sprintf("http://localhost:8080/%s", shortCode)
+	shortenedURL := fmt.Sprintf("https://url-shortener-seven-theta.vercel.app/%s", shortCode)
 
 	resp := ShortenResponse{ShortURL: shortenedURL}
 	w.Header().Set("Content-Type", "application/json")
