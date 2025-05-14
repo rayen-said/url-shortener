@@ -12,7 +12,7 @@ interface ActionResult {
 }
 
 // Ensure your Go backend is running and accessible, usually on http://localhost:8080
-const GO_BACKEND_URL = process.env.GO_BACKEND_URL || "http://localhost:8080/shorten";
+
 
 export async function shortenUrlAction(longUrl: string): Promise<ActionResult> {
   if (!longUrl || !longUrl.trim()) {
@@ -25,7 +25,10 @@ export async function shortenUrlAction(longUrl: string): Promise<ActionResult> {
   }
 
   try {
-    const response = await fetch(GO_BACKEND_URL, {
+    if (!process.env.RAIL_PUBLIC_DOMAIN) {
+      throw new Error("RAIL_PUBLIC_DOMAIN environment variable is not defined");
+    }
+    const response = await fetch(process.env.RAIL_PUBLIC_DOMAIN, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
